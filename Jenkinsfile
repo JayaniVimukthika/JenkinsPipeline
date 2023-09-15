@@ -5,7 +5,7 @@ pipeline{
             steps{
                 echo "build the code and using Maven"
             }
-            pot{
+            post{
                 always{
                     mail to:"jayaniv.vithanage@gmail.com",
                     subject:"Integrate Git with Jenkins",
