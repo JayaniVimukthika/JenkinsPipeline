@@ -38,12 +38,13 @@ pipeline{
             }
         }
 		
-		post{
-                success{
-                    mail to:"jayaniv.vithanage@gmail.com",
-                    subject:"Integrate Git with Jenkins",
-                    body:"The build has been done successfully!"
+    }
+	post{
+           success{
+                mail to:"jayaniv.vithanage@gmail.com",
+                subject:"Integrate Git with Jenkins",
+                body:"The build has been done successfully!"
                 }
             }
-    }
+    
 }
