@@ -5,6 +5,13 @@ pipeline{
             steps{
                 echo "build the code and using Maven"
             }
+            pot{
+                always{
+                    mail to:"jayaniv.vithanage@gmail.com",
+                    subject:"Integrate Git with Jenkins",
+                    body:"The build has been done successfully!"
+                }
+            }
         }
         stage('Integration Test'){
             steps{
