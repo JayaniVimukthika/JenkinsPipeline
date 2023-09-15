@@ -5,13 +5,7 @@ pipeline{
             steps{
                 echo "build the code and using Maven"
             }
-            post{
-                always{
-                    mail to:"jayaniv.vithanage@gmail.com",
-                    subject:"Integrate Git with Jenkins",
-                    body:"The build has been done successfully!"
-                }
-            }
+            
         }
         stage('Integration Test'){
             steps{
@@ -43,5 +37,13 @@ pipeline{
                 echo "Deployment of the application to a production server. Tool is AWS EC2!"
             }
         }
+		
+		post{
+                success{
+                    mail to:"jayaniv.vithanage@gmail.com",
+                    subject:"Integrate Git with Jenkins",
+                    body:"The build has been done successfully!"
+                }
+            }
     }
 }
